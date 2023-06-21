@@ -10,7 +10,7 @@ use Geocoder\Provider\BingMaps\BingMaps;
 use Geocoder\Provider\Chain\Chain;
 use Geocoder\Provider\GeoIP2\GeoIP2;
 use Geocoder\Provider\GeoPlugin\GeoPlugin;
-use Geocoder\Provider\GoogleMaps\GoogleMaps;
+// use Geocoder\Provider\GoogleMaps\GoogleMaps;
 use GeoIp2\Database\Reader;
 use Http\Client\Curl\Client;
 
@@ -22,20 +22,20 @@ return [
     'providers' => [
         Chain::class => [
             GeoIP2::class => [],
-            GoogleMaps::class => [
-                'en-US',
-                env('GOOGLE_MAPS_API_KEY'),
-            ],
+            // GoogleMaps::class => [
+            //     'en-US',
+            //     env('GOOGLE_MAPS_API_KEY'),
+            // ],
             GeoPlugin::class  => [],
         ],
         BingMaps::class => [
             'en-US',
             env('BING_MAPS_API_KEY'),
         ],
-        GoogleMaps::class => [
-            'us',
-            env('GOOGLE_MAPS_API_KEY'),
-        ],
+        // GoogleMaps::class => [
+        //     'us',
+        //     env('GOOGLE_MAPS_API_KEY'),
+        // ],
     ],
     'adapter'  => Client::class,
     // 'reader' => new Reader(__DIR__ . '/../resources/assets/GeoLite2-City.mmdb'),
